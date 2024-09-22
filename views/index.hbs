@@ -1,0 +1,39 @@
+<center>
+    <div>
+        <h1 style="color: blueviolet;">TODO APP</h1>
+        <form action="/todos" method="post" enctype="multipart/form-data">
+            <input name="task" placeholder="Add Task here" style="border-radius: 5px; width: 20%; height: 40px;"
+                type="text">
+            <button
+                style="height: 39px; width: 80px; border-radius: 5px; border: none; background-color: red;">Add</button>
+        </form>
+        {{#each todos}}
+
+        <p
+            style="background-color: aquamarine; padding: 20px; width: 90%; text-align: start; justify-content: space-between; display: flex;">
+            <span>
+                <a style="text-decoration: none;" href="/todos/detail/{{this.id}}"><span><b>{{this.task}}</b></span>
+                </a>
+                {{#if this.completed}}
+                <a href="/todos/{{this.id}}/{{this.completed}}"><button
+                        style="border-radius: 20px; background-color: green; color: aliceblue; border: none; width: 80px;">done</button></a>
+                {{else}}
+                <a href="/todos/{{this.id}}/{{this.completed}}">
+                    <button
+                        style="border-radius: 20px; background-color: rgb(255, 0, 0); color: aliceblue; border: none; width: 80px;">Not
+                        done</button></a>
+                {{/if}}
+            </span>
+            <span>
+                <a href="/todosUpdate/{{this.id}}">
+                    <button
+                        style=" background-color: rgb(234, 255, 0); color: rgb(0, 0, 0); border: none; width: 70px;">Update</button></a>
+                <a href="/todosDe/{{this.id}}">
+                    <button
+                        style=" background-color: rgb(98, 0, 0); color: aliceblue; border: none; width: 70px;">Remove</button></a>
+            </span>
+        </p>
+
+        {{/each}}
+    </div>
+</center>

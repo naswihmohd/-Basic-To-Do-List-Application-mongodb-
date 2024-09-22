@@ -1,0 +1,15 @@
+<center>
+
+    <h3>Id Number- {{todoItem.id}}</h3>
+
+    <h1>{{todoItem.task}}</h1>
+    {{#if todoItem.completed}}
+    <div style="color: rgb(255, 255, 255); width: 500px; height: 500px; border-radius: 50%; background-color: green;">
+        <h1 style="padding-top: 200px; font-size: 70px;">Done</h1>
+    </div>
+    {{else}}
+    <div style="color: rgb(255, 255, 255); width: 500px; height: 500px; border-radius: 50%; background-color: rgb(248, 0, 0);">
+        <h1 style="padding-top: 200px; font-size: 70px;">Not Done</h1>
+    </div>
+    {{/if}}
+</center>
