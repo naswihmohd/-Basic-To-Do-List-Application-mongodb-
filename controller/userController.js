@@ -38,6 +38,5 @@ module.exports.doneItem = async (req, res) => {
 module.exports.removeItem=async(req,res)=>{
     const Id = req.params.id
     await todo.deleteOne({id:Id})
-    console.log('hi')
     res.redirect('/todos')
 }
